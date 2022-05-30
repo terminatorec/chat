@@ -1,38 +1,291 @@
-.App {
-  text-align: center;
-}
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap");
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Comfortaa", cursive;
+  /* color: white; */
+  /* border-radius: 5px; */
 }
+body {
+  background: rgb(23, 33, 43);
+  /* background: linear-gradient(
+    0deg,
+    rgba(0, 19, 83, 1) 0%,
+    rgba(0, 36, 156, 1) 50%,
+    rgba(0, 19, 83, 1) 100%
+  ); */
+  background-repeat: no-repeat;
+  height: 100vh;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
+button{
   flex-direction: column;
-  align-items: center;
+  /* background: #000; */
+  border: 1px solid white;
+  outline: none;
+  padding: 10px;
+  /* background: rgb(0,36,156); */
+/* background: radial-gradient(circle, rgba(0,36,156,1) 0%, rgba(0,19,83,1) 100%); */
+  cursor: pointer;
+  /* margin: 0 5px; */
+}
+input{
+  /* color: black; */
+  padding: 10px;
+  /* background: linear-gradient(0deg, rgba(217,194,34,1) 0%, rgba(255,250,120,1) 100%); */
+  border: 1px solid black;
+  outline: none;
+}
+button:hover{
+  opacity: 0.7;
+}
+.myModal {
+  z-index: 5;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.637);
+  margin: 0 auto;
+}
+.myModalContent {
+  padding: 25px;
+  background: rgba(78, 92, 119, 0.907);
+  border-radius: 5px;
+}
+
+.myModal.active {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  flex-direction: column;
 }
 
-.App-link {
-  color: #61dafb;
+.lds-dual-ring {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
 }
-
-@keyframes App-logo-spin {
-  from {
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
     transform: rotate(0deg);
   }
-  to {
+  100% {
     transform: rotate(360deg);
   }
+}
+.messageWrap{
+  display: grid;
+  grid-template-columns: 45px 1fr;
+  /* width: fit-content; */
+}
+.message{
+  /* border-bottom: 5px solid rgb(255, 199, 199);  */
+  /* white-space: pre; */
+  word-break: break-all;
+  width: 100%;
+}
+.messageInside{
+  margin-bottom: 10px;
+}
+
+
+input{
+  border: none;
+  outline: none;
+}
+.colorWrap{
+  background:rgb(23, 33, 43);
+  margin: 10px 0;
+  border-radius: 10px;
+  padding: 20px;
+}
+.color{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 30px;
+}
+.HexColorPicker1{
+  margin: 0 auto;
+}
+.colorInside{
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+.colorInside p{
+  /* margin: 0 auto; */
+  margin: 5px 0;
+  /* width:fit-content; */
+  background:rgb(0, 122, 204);
+  padding: 15px;
+  border-radius: 15px;
+  display: inline-block;
+}
+.insertBlock{
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* margin: 0 auto; */
+  /* align-items: flex-end; */
+  height: 150px;
+  border: none;
+  position: relative;
+}
+.insertBlock textarea{
+  resize: none;
+  width: calc(100% - 100px);
+  height: 100%;
+  background: none;
+  color: white;
+  font-size: 18px;
+  align-self: center;
+  word-break: break-all;
+  border: none;
+  padding: 5px;
+  outline: none;
+  /* padding-right: 100px; */
+  margin: 0;
+  
+  /* margin-left: 0; */
+  /* left: 0; */
+}
+.insertBlockButton{
+  position: absolute;
+  /* top: 55px; */
+  right: 0;
+  bottom: 5px;
+  height: 45%;
+  border-radius: 15px;
+  width: 80px;
+  background: rgb(17, 113, 210);
+  border: none;
+  color: white;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.insertBlockButton2{
+  height: 45%;
+  position: absolute;
+  top: 5px;
+  right: 0;
+  /* bottom: 5px; */
+  border-radius: 15px;
+  width: 80px;
+  background: rgb(17, 113, 210);
+  border: none;
+  color: white;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.insertBlockButton p{
+  align-self: center;
+}
+.insertBlockButton2 p{
+  align-self: center;
+  font-size: 22px;
+}
+.registerWindow{
+  background: rgb(245, 222, 25);
+  /* background: #001429; */
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  min-width: 550px;
+}
+.buttonsMessageWrap{
+  width: 45px;
+}
+.buttonsMessageWrap img{
+  width: 35px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.buttonsMessageWrap img:hover{
+  opacity: 0.7;
+
+}
+.timeUnderTextMessage{
+  margin-top: 10px;
+  font-size: 11px;
+  text-align: right;
+  background: rgba(255, 255, 255, 0.25);
+  display: inline-block;
+  position: absolute;
+  padding: 1px 3px;
+  right: -5px;
+  bottom: 0;
+  border-radius: 5px;
+  /* background:rgb(0, 122, 204); */
+  /* width: fit-content; */
+}
+/* .timeOverTextMessage{
+  margin-top: 10px;
+  font-size: 11px;
+  text-align: right;
+  background: rgba(255, 255, 255, 0.2);
+  display: inline-block;
+  position: absolute;
+  padding: 1px 3px;
+  right: -5px;
+  top: -40px;
+  border-radius: 5px;
+} */
+.TextMessage{
+  width: 100%;
+  word-break: break-word;
+  white-space: pre-line;
+  padding: 2px;
+  border-radius: 5px;
+}
+.Navbar{
+  height: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.timerDIv{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+.messageInsideChange{
+  font-size: 13px;
+  font-weight: normal;
+  margin: 5px 0;
+  text-align: left;
+  width: fit-content;
+  /* padding: 3px; */
+  padding: 1px 3px;
+  /* right: -5px;
+  bottom: 0; */
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.25);
+}
+.linksNavbarBlock{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.linksNavbarBlock button{
+  width: 100%;
 }
